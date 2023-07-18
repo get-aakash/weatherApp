@@ -8,6 +8,15 @@
   padding: 2rem;
 }
 
+.circle{
+  background: #1ECBE1;
+  width: 150px;
+  height: 140px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .footer{
   background-color: #32cdba;

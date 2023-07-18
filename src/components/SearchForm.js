@@ -19,6 +19,8 @@ const SearchForm = () => {
     e.preventDefault()
     const result = await fetchData(city)
     setValue(result)
+    console.log(result)
+    
     
     if(result){
       
@@ -30,6 +32,7 @@ const SearchForm = () => {
    
 
   }
+  
   return (
     <DefaultLayout>
       <Container className='search-form  mt-3'>
@@ -45,11 +48,11 @@ const SearchForm = () => {
           </Row>
         </Form>
     <div>
-      <Display value={value} />
+      {value && <Display value={value} />}
     </div>
     {error && (
         <Alert variant='danger'>
-          No movie found. Try searching for some other movie!!
+          City not found. Try with correct name!!
         </Alert>
       )}
     
