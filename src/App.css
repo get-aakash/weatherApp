@@ -17,6 +17,11 @@
   justify-content: center;
   align-items: center;
 }
+.cloud-icon{
+  font-size: 80px;
+  margin-top: 5rem;
+  color: #ececf1;
+}
 
 .footer{
   background-color: #32cdba;

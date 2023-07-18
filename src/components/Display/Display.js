@@ -1,5 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCloud } from '@fortawesome/free-solid-svg-icons';
 
 const Display = ({ value }) => {
   return (
@@ -12,7 +14,7 @@ const Display = ({ value }) => {
     
             <p className='mt-5 me-3 fw-bold fs-5 '>{((value?.main?.temp)-273).toFixed(0)} C</p>
     
-            <div className='circle'><i className="fa-duotone fa-cloud"></i></div>
+            <div className='circle'><FontAwesomeIcon icon={faCloud} className="cloud-icon" /></div>
             <div className='mt-4 ms-4'>
               <p className='fw-bold fs-5'>Humid: {value?.main?.humidity}%</p>
               <p className='fw-bold fs-5'>Wind: {value?.wind?.speed}km/h</p>
