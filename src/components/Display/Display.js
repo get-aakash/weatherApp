@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloud } from '@fortawesome/free-solid-svg-icons';
 
 const Display = ({ value }) => {
+  // const xyz = JSON.stringify(value.clouds.all)
+  // console.log((parseInt(xyz)))
   return (
     <Container >
       
