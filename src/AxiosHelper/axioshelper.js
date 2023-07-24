@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const fetchData = async(city)=>{
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=68ee6aa7a509b956382fa8853b7507e0`
+    const url = `http://api.weatherunlocked.com/api/forecast/london?app_id=84e0f47c&app_key=3a51cb9f215925de7e0a8c54a3218165`
     
     try {
         const data = await axios.get(url)
