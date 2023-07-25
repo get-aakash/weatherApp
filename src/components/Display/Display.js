@@ -6,7 +6,7 @@ import img1 from "../../Assets/10d.png"
 import img2 from "../../Assets/09d.png"
 import img3 from "../../Assets/01n.png"
 const Display = ({ value }) => {
-  console.log((value))
+  
   const tempConversion = ()=>{
     return ((value?.main?.temp) - 273).toFixed(0)
 

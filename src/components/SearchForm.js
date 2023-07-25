@@ -19,11 +19,11 @@ const SearchForm = () => {
     e.preventDefault()
     
     const result = await fetchData(city)
-    console.log((result))
+    //console.log((result))
     setValue(result)
     if (result?.status === 200) {
       setValue(result.data)
-      
+      console.log(result.data.Days[0])
       setError('')
     } else {
       setError(true)
