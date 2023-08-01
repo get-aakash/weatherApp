@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import { fetchData } from '../AxiosHelper/axioshelper'
 import DefaultLayout from './Layout/DefaultLayout'
 import { Alert, Button, Col, Container, FloatingLabel, Form, Row } from 'react-bootstrap'
@@ -19,11 +19,10 @@ const SearchForm = () => {
     e.preventDefault()
     
     const result = await fetchData(city)
-    //console.log((result))
-    setValue(result)
+    console.log((result.data.Days[0]))
+    setValue(result.data.Days)
     if (result?.status === 200) {
       setValue(result.data)
-      console.log(result.data.Days[0])
       setError('')
     } else {
       setError(true)
@@ -45,7 +44,7 @@ const SearchForm = () => {
             </Row>
           </Form>
           <div>
-            {value && <Display value={value} />}
+            {value.length !==0  && <Display value={value} />}
           </div>
           {error && (
             <Alert variant='danger mt-3'>
