@@ -6,10 +6,14 @@ import Display from './Display/Display'
 
 const SearchForm = () => {
   const [city, setCity] = useState("")
+  const [cityname, setCityName] = useState("")
   const [value, setValue] = useState([])
   const [error, setError] = useState(false)
 
-
+  
+  const temp=(data)=>{
+    console.log(data) 
+   }
   const handleOnChange = (e) => {
     const { value } = e.target
     setCity(value)
@@ -17,9 +21,9 @@ const SearchForm = () => {
   }
   const handleOnSubmit = async (e) => {
     e.preventDefault()
-    
+    setCityName(city)
     const result = await fetchData(city)
-    console.log((result.data.Days[0]))
+    console.log((result))
     setValue(result.data.Days)
     if (result?.status === 200) {
       setValue(result.data)
@@ -30,7 +34,7 @@ const SearchForm = () => {
   }
 
   return (
-    <DefaultLayout>
+    <DefaultLayout temp={temp}>
       <Container className='search-form  mt-3'>
         <>
           <Form onSubmit={handleOnSubmit}>
@@ -44,7 +48,7 @@ const SearchForm = () => {
             </Row>
           </Form>
           <div>
-            {value.length !==0  && <Display value={value} />}
+            {value.length !==0  && <Display temp={temp} value={value} city={cityname}/>}
           </div>
           {error && (
             <Alert variant='danger mt-3'>
