@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './home.css'
+import '../../App.css'
 import search_icon from "../../assets/search.png"
 import clear_icon from "../../assets/clear.png"
 import cloud_icon from "../../assets/cloud.png"
@@ -9,6 +9,7 @@ import snow_icon from "../../assets/snow.png"
 import { getAxios } from '../../Axios/axiosHelper'
 import { Alert, Form } from 'react-bootstrap'
 import DisplayWeather from '../display/DisplayWeather'
+import { toast } from 'react-toastify'
 
 const Home = () => {
 
@@ -33,7 +34,7 @@ const Home = () => {
     const handleOnSubmit = async(e) => {
         e.preventDefault()
         const value = await getAxios(formData)
-        if(value.base === "stations"){
+        if(value?.base === "stations"){
             setData(value)
             setError("")
             if(value?.weather[0]?.icon==='01d' || value?.weather[0]?.icon==="01n" ){
@@ -62,9 +63,8 @@ const Home = () => {
             }
         }else{
             setError(true)
+            
         }
-        
-        console.log(value)
         
     }
     return (
