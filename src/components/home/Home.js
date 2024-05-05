@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './home.css'
 import search_icon from "../../assets/search.png"
 import clear_icon from "../../assets/clear.png"
@@ -16,6 +16,16 @@ const Home = () => {
     const [error, setError] = useState(false)
     const [data, setData] = useState({})
     const [wicon, setWicon] = useState(cloud_icon)
+    const defaultValue = "New York"
+    useEffect(()=>{
+        const fetch = async()=>{
+            const result =  await getAxios(defaultValue)
+            setData(result)
+        }
+        fetch()
+        
+        
+    },[])
     const handleOnChange = (e) => {
         setFormData(e.target.value)
 
