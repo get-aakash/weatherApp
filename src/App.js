@@ -1,15 +1,11 @@
 
-import axios from 'axios';
 import './App.css';
-import { fetchData } from './AxiosHelper/axioshelper';
-import SearchForm from './components/SearchForm';
-
+import Home from './components/home/Home';
 function  App() {
   
   return (
     <div className="App">
-      <SearchForm  />
-      
+     <Home />
     </div>
   );
 }
